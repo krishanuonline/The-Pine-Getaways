@@ -10,6 +10,7 @@ const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
       <div className="relative">
         <select
           ref={ref}
+          suppressHydrationWarning
           className={cn(
             "flex h-11 w-full appearance-none rounded-md border border-input bg-background px-3.5 pr-9 text-sm text-foreground",
             "transition-colors outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:border-ring",

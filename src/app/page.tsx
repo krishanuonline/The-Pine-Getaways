@@ -1,6 +1,5 @@
 import {
   Hero,
-  Welcome,
   Homestays,
   Explore,
   Experiences,
@@ -15,7 +14,6 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <Welcome />
       <Homestays />
       <Explore />
       <Experiences />

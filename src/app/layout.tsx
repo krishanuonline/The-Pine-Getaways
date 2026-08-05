@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { WelcomeModal } from "@/components/ui/WelcomeModal";
 import { siteConfig } from "@/config/site";
 import "./globals.css";
 
@@ -59,6 +60,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
+        <WelcomeModal />
       </body>
     </html>
   );

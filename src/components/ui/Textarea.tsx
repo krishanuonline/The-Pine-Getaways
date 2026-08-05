@@ -12,6 +12,7 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
       <textarea
         ref={ref}
         rows={rows}
+        suppressHydrationWarning
         aria-invalid={invalid}
         className={cn(
           "flex w-full rounded-md border border-input bg-background px-3.5 py-2.5 text-sm text-foreground",

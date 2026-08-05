@@ -1,5 +1,4 @@
 export * from "@/components/sections/home/Hero";
-export * from "@/components/sections/home/Welcome";
 export * from "@/components/sections/home/Homestays";
 export * from "@/components/sections/home/Explore";
 export * from "@/components/sections/home/Experiences";

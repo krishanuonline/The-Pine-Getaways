@@ -10,6 +10,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
     return (
       <input
         ref={ref}
+        suppressHydrationWarning
         aria-invalid={invalid}
         className={cn(
           "flex h-11 w-full rounded-md border border-input bg-background px-3.5 text-sm text-foreground",

@@ -26,6 +26,7 @@ function MobileNav({ variant = "dark", activeId }: MobileNavProps) {
     <div className="md:hidden">
       <button
         type="button"
+        suppressHydrationWarning
         aria-label={open ? "Close menu" : "Open menu"}
         aria-expanded={open}
         onClick={() => setOpen((prev) => !prev)}

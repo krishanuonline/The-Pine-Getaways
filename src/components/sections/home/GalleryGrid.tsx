@@ -31,6 +31,7 @@ function GalleryGrid({ items }: { items: GalleryItem[] }) {
           <button
             key={category}
             type="button"
+            suppressHydrationWarning
             onClick={() => setActive(category)}
             className={cn(
               "rounded-full px-4 py-1.5 text-sm font-medium transition-colors",
