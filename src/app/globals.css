@@ -1,0 +1,132 @@
+@import "tailwindcss";
+
+:root {
+  /* Brand scale — extracted from The Pine Getaways brochure.
+     Treat as best-effort approximations; fine-tune against real brand
+     guidelines/logo file when available. */
+  --forest-50: #eef3ee;
+  --forest-100: #dde7dd;
+  --forest-400: #4c7a63;
+  --forest-600: #2c5945;
+  --forest-700: #234a38;
+  --forest-800: #1b3b2c;
+  --forest-900: #142e22;
+  --forest-950: #0f221a;
+
+  --gold-100: #f6e7c0;
+  --gold-300: #e7c578;
+  --gold-400: #d8b45c;
+  --gold-500: #c9a24b;
+  --gold-600: #b08935;
+
+  --cream-50: #fdfbf6;
+  --cream-100: #faf6ec;
+  --cream-200: #f3ecda;
+  --cream-300: #efe0bb;
+
+  --sage-50: #f1f3ed;
+  --sage-100: #e9ede2;
+
+  --whatsapp: #25d366;
+  --whatsapp-foreground: #ffffff;
+
+  /* Semantic tokens */
+  --background: var(--cream-100);
+  --foreground: var(--forest-900);
+
+  --primary: var(--gold-500);
+  --primary-foreground: var(--forest-950);
+
+  --secondary: var(--forest-800);
+  --secondary-foreground: var(--cream-50);
+
+  --accent: var(--gold-600);
+  --accent-foreground: var(--forest-950);
+
+  --muted: var(--cream-200);
+  --muted-foreground: #6b6f61;
+
+  --border: #e4dcc4;
+  --input: #e4dcc4;
+  --ring: var(--gold-500);
+
+  --card: var(--cream-50);
+  --card-foreground: var(--forest-900);
+
+  --destructive: #b3261e;
+  --destructive-foreground: #ffffff;
+
+  --radius: 0.625rem;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+
+  --color-whatsapp: var(--whatsapp);
+  --color-whatsapp-foreground: var(--whatsapp-foreground);
+
+  --color-forest-50: var(--forest-50);
+  --color-forest-100: var(--forest-100);
+  --color-forest-400: var(--forest-400);
+  --color-forest-600: var(--forest-600);
+  --color-forest-700: var(--forest-700);
+  --color-forest-800: var(--forest-800);
+  --color-forest-900: var(--forest-900);
+  --color-forest-950: var(--forest-950);
+
+  --color-gold-100: var(--gold-100);
+  --color-gold-300: var(--gold-300);
+  --color-gold-400: var(--gold-400);
+  --color-gold-500: var(--gold-500);
+  --color-gold-600: var(--gold-600);
+
+  --color-cream-50: var(--cream-50);
+  --color-cream-100: var(--cream-100);
+  --color-cream-200: var(--cream-200);
+  --color-cream-300: var(--cream-300);
+
+  --color-sage-50: var(--sage-50);
+  --color-sage-100: var(--sage-100);
+
+  --radius-sm: calc(var(--radius) - 0.25rem);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 0.25rem);
+  --radius-xl: calc(var(--radius) + 0.5rem);
+
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-playfair);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+::selection {
+  background: var(--gold-300);
+  color: var(--forest-950);
+}
