@@ -1,9 +1,10 @@
 import {
   Hero,
   Homestays,
-  Explore,
   Experiences,
+  Explore,
   Attractions,
+  TransportSightseeing,
   WhyChooseUs,
   Gallery,
   Reviews,
@@ -15,9 +16,10 @@ export default function Home() {
     <>
       <Hero />
       <Homestays />
-      <Explore />
       <Experiences />
+      <Explore />
       <Attractions />
+      <TransportSightseeing />
       <WhyChooseUs />
       <Gallery />
       <Reviews />

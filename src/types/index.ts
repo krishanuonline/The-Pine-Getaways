@@ -29,6 +29,16 @@ export interface AttractionCluster {
   places: string[];
 }
 
+export interface PickupPoint {
+  name: string;
+  duration: string;
+}
+
+export interface Vehicle {
+  name: string;
+  note: string;
+}
+
 export interface Feature {
   title: string;
   description: string;

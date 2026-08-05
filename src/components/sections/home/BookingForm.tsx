@@ -10,7 +10,16 @@ import { Button } from "@/components/ui/Button";
 import { buildWhatsAppLink } from "@/lib/whatsapp";
 import { homestays } from "@/data/homestays";
 
-function BookingForm() {
+export interface BookingFormProps {
+  /** Pre-selects a homestay, e.g. when opened from that homestay's "Book Request" button. */
+  defaultHomestay?: string;
+  /** Called after the WhatsApp link is opened — lets a hosting modal close itself. */
+  onSubmitted?: () => void;
+}
+
+function BookingForm({ defaultHomestay = "", onSubmitted }: BookingFormProps) {
+  const uid = React.useId();
+
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -29,34 +38,35 @@ function BookingForm() {
     if (message) lines.push(`Message: ${message}`);
 
     window.open(buildWhatsAppLink(lines.join("\n")), "_blank", "noopener,noreferrer");
+    onSubmitted?.();
   }
 
   return (
     <form onSubmit={handleSubmit} className="grid gap-5">
       <div className="grid gap-5 sm:grid-cols-2">
-        <FormField label="Name" htmlFor="name" required>
-          <Input id="name" name="name" required placeholder="Your full name" />
+        <FormField label="Name" htmlFor={`${uid}-name`} required>
+          <Input id={`${uid}-name`} name="name" required placeholder="Your full name" />
         </FormField>
-        <FormField label="Phone / WhatsApp" htmlFor="phone" required>
-          <Input id="phone" name="phone" type="tel" required placeholder="+91 00000 00000" />
-        </FormField>
-      </div>
-
-      <div className="grid gap-5 sm:grid-cols-2">
-        <FormField label="Check-in" htmlFor="checkIn">
-          <Input id="checkIn" name="checkIn" type="date" />
-        </FormField>
-        <FormField label="Check-out" htmlFor="checkOut">
-          <Input id="checkOut" name="checkOut" type="date" />
+        <FormField label="Phone / WhatsApp" htmlFor={`${uid}-phone`} required>
+          <Input id={`${uid}-phone`} name="phone" type="tel" required placeholder="+91 00000 00000" />
         </FormField>
       </div>
 
       <div className="grid gap-5 sm:grid-cols-2">
-        <FormField label="Guests" htmlFor="guests">
-          <Input id="guests" name="guests" type="number" min={1} placeholder="2" />
+        <FormField label="Check-in" htmlFor={`${uid}-checkIn`}>
+          <Input id={`${uid}-checkIn`} name="checkIn" type="date" />
         </FormField>
-        <FormField label="Preferred homestay" htmlFor="homestay">
-          <Select id="homestay" name="homestay" defaultValue="">
+        <FormField label="Check-out" htmlFor={`${uid}-checkOut`}>
+          <Input id={`${uid}-checkOut`} name="checkOut" type="date" />
+        </FormField>
+      </div>
+
+      <div className="grid gap-5 sm:grid-cols-2">
+        <FormField label="Guests" htmlFor={`${uid}-guests`}>
+          <Input id={`${uid}-guests`} name="guests" type="number" min={1} placeholder="2" />
+        </FormField>
+        <FormField label="Preferred homestay" htmlFor={`${uid}-homestay`}>
+          <Select id={`${uid}-homestay`} name="homestay" defaultValue={defaultHomestay}>
             <option value="">No preference</option>
             {homestays.map((homestay) => (
               <option key={homestay.slug} value={homestay.name}>
@@ -67,8 +77,8 @@ function BookingForm() {
         </FormField>
       </div>
 
-      <FormField label="Message" htmlFor="message">
-        <Textarea id="message" name="message" placeholder="Anything else we should know?" />
+      <FormField label="Message" htmlFor={`${uid}-message`}>
+        <Textarea id={`${uid}-message`} name="message" placeholder="Anything else we should know?" />
       </FormField>
 
       <Button type="submit" variant="whatsapp" size="lg" className="mt-2 w-full sm:w-auto">

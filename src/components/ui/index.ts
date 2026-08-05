@@ -16,5 +16,6 @@ export * from "@/components/ui/PriceTag";
 export * from "@/components/ui/Rating";
 export * from "@/components/ui/Reveal";
 export * from "@/components/ui/WhatsAppButton";
+export * from "@/components/ui/WhatsAppFloatingButton";
 export * from "@/components/ui/WelcomeModal";
 export * from "@/components/ui/FeatureCard";

@@ -3,6 +3,7 @@ export * from "@/components/sections/home/Homestays";
 export * from "@/components/sections/home/Explore";
 export * from "@/components/sections/home/Experiences";
 export * from "@/components/sections/home/Attractions";
+export * from "@/components/sections/home/TransportSightseeing";
 export * from "@/components/sections/home/WhyChooseUs";
 export * from "@/components/sections/home/Gallery";
 export * from "@/components/sections/home/Reviews";

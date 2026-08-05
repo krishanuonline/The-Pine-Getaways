@@ -1,10 +1,9 @@
-import Link from "next/link";
 import { MapPin, Check, Home } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/Card";
 import { PlaceholderImage } from "@/components/ui/PlaceholderImage";
-import { Button } from "@/components/ui/Button";
 import { PriceTag } from "@/components/ui/PriceTag";
 import { Reveal } from "@/components/ui/Reveal";
+import { BookRequestButton } from "@/components/sections/home/BookRequestButton";
 import type { Homestay } from "@/types";
 
 function HomestayCard({ homestay, delay = 0 }: { homestay: Homestay; delay?: number }) {
@@ -39,9 +38,7 @@ function HomestayCard({ homestay, delay = 0 }: { homestay: Homestay; delay?: num
               originalPrice={homestay.originalPriceInr}
               unit="/ person / night, all-inclusive"
             />
-            <Button size="sm" variant="outline" asChild>
-              <Link href="/#contact">View Homestay</Link>
-            </Button>
+            <BookRequestButton homestayName={homestay.name} />
           </div>
         </CardContent>
       </Card>
