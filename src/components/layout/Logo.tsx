@@ -16,16 +16,26 @@ function Logo({ className, variant = "dark" }: LogoProps) {
     <Link
       href="/"
       className={cn("flex items-center gap-2.5", className)}
-      aria-label={siteConfig.name}
+      aria-label={`${siteConfig.name} — ${siteConfig.tagline}`}
     >
       <LogoMark className="h-9 w-9 shrink-0" />
-      <span
-        className={cn(
-          "font-serif text-lg leading-tight font-semibold tracking-tight",
-          isLight ? "text-cream-50" : "text-forest-900"
-        )}
-      >
-        {siteConfig.name}
+      <span className="flex flex-col leading-tight">
+        <span
+          className={cn(
+            "font-serif text-lg leading-tight font-semibold tracking-tight",
+            isLight ? "text-cream-50" : "text-forest-900"
+          )}
+        >
+          {siteConfig.name}
+        </span>
+        <span
+          className={cn(
+            "hidden text-[0.6rem] font-medium tracking-[0.15em] uppercase sm:block",
+            isLight ? "text-cream-50/70" : "text-foreground/50"
+          )}
+        >
+          {siteConfig.tagline}
+        </span>
       </span>
     </Link>
   );

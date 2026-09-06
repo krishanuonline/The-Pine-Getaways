@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import { Download, Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { NavLink } from "@/components/layout/NavLink";
@@ -32,42 +33,61 @@ function MobileNav({ variant = "dark", activeId }: MobileNavProps) {
         aria-expanded={open}
         onClick={() => setOpen((prev) => !prev)}
         className={cn(
-          "flex h-10 w-10 items-center justify-center rounded-full transition-colors",
+          "relative flex h-10 w-10 items-center justify-center overflow-hidden rounded-full transition-colors",
           isLight ? "bg-forest-950/30 text-cream-50 backdrop-blur-sm" : "text-forest-800 hover:bg-muted"
         )}
       >
-        {open ? <X className="size-5" /> : <Menu className="size-5" />}
+        <AnimatePresence mode="wait" initial={false}>
+          <motion.span
+            key={open ? "close" : "open"}
+            initial={{ opacity: 0, rotate: -45 }}
+            animate={{ opacity: 1, rotate: 0 }}
+            exit={{ opacity: 0, rotate: 45 }}
+            transition={{ duration: 0.18 }}
+            className="flex items-center justify-center"
+          >
+            {open ? <X className="size-5" /> : <Menu className="size-5" />}
+          </motion.span>
+        </AnimatePresence>
       </button>
 
-      {open && (
-        <div className="absolute inset-x-0 top-full border-b border-border bg-background shadow-sm">
-          <nav className="flex flex-col gap-1 px-4 py-4">
-            {siteConfig.navLinks.map((link) => (
-              <NavLink
-                key={link.href}
-                {...link}
-                variant="dark"
-                className="py-2"
-                active={link.sectionId === activeId}
-                layoutGroup="mobile"
-                onClick={() => setOpen(false)}
-              />
-            ))}
-            <Button variant="outline" size="sm" asChild className="mt-2 gap-1.5">
-              <a
-                href={siteConfig.brochureUrl}
-                download
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => setOpen(false)}
-              >
-                <Download className="h-4 w-4" />
-                Download Brochure
-              </a>
-            </Button>
-          </nav>
-        </div>
-      )}
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.25, ease: [0.21, 0.47, 0.32, 0.98] }}
+            className="absolute inset-x-0 top-full border-b border-border bg-background shadow-sm"
+          >
+            <nav className="flex flex-col gap-1 px-4 py-4">
+              {siteConfig.navLinks.map((link) => (
+                <NavLink
+                  key={link.href}
+                  {...link}
+                  variant="dark"
+                  className="py-2"
+                  active={link.sectionId === activeId}
+                  layoutGroup="mobile"
+                  onClick={() => setOpen(false)}
+                />
+              ))}
+              <Button variant="outline" size="sm" asChild className="mt-2 gap-1.5">
+                <a
+                  href={siteConfig.brochureUrl}
+                  download
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setOpen(false)}
+                >
+                  <Download className="h-4 w-4" />
+                  Download Brochure
+                </a>
+              </Button>
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

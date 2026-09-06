@@ -3,7 +3,7 @@ import { Inter, Playfair_Display } from "next/font/google";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { WelcomeModal } from "@/components/ui/WelcomeModal";
-import { WhatsAppFloatingButton } from "@/components/ui/WhatsAppFloatingButton";
+import { FloatingActions } from "@/components/ui/FloatingActions";
 import { siteConfig } from "@/config/site";
 import "./globals.css";
 
@@ -65,7 +65,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <main className="flex-1">{children}</main>
         <Footer />
         <WelcomeModal />
-        <WhatsAppFloatingButton />
+        <FloatingActions />
       </body>
     </html>
   );

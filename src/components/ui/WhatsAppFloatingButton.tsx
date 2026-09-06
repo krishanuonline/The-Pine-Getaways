@@ -12,7 +12,7 @@ function WhatsAppFloatingButton() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat with us on WhatsApp"
-      className="fixed right-5 bottom-5 z-40 flex items-center gap-2.5 rounded-full bg-whatsapp px-5 py-3.5 text-sm font-semibold text-whatsapp-foreground shadow-lg sm:right-6 sm:bottom-6"
+      className="flex items-center gap-2.5 rounded-full bg-whatsapp px-5 py-3.5 text-sm font-semibold text-whatsapp-foreground shadow-lg"
       animate={{
         boxShadow: [
           "0 0 0 0 rgba(37,211,102,0.55)",

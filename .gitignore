@@ -36,6 +36,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# raw/full-res photo uploads kept as local backups — not served, not deployed
+/originals
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

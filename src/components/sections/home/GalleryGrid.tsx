@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import Image from "next/image";
+import { AnimatePresence, motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { PlaceholderImage } from "@/components/ui/PlaceholderImage";
 import type { GalleryCategory, GalleryItem } from "@/types";
@@ -40,35 +41,42 @@ function GalleryGrid({ items }: { items: GalleryItem[] }) {
       </div>
 
       <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-4">
-        {filtered.map((item) => (
-          <div
-            key={item.label}
-            className="group relative aspect-square overflow-hidden rounded-xl shadow-sm"
-          >
-            {item.image ? (
-              <Image
-                src={item.image}
-                alt={item.label}
-                fill
-                sizes="(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw"
-                className="object-cover transition-transform duration-500 ease-out group-hover:scale-110"
-              />
-            ) : (
-              <PlaceholderImage label={item.label} showLabel={false} className="absolute inset-0" />
-            )}
+        <AnimatePresence mode="popLayout">
+          {filtered.map((item) => (
+            <motion.div
+              key={item.label}
+              layout
+              initial={{ opacity: 0, scale: 0.92 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.92 }}
+              transition={{ duration: 0.3, ease: [0.21, 0.47, 0.32, 0.98] }}
+              className="group relative aspect-square overflow-hidden rounded-xl shadow-sm"
+            >
+              {item.image ? (
+                <Image
+                  src={item.image}
+                  alt={item.label}
+                  fill
+                  sizes="(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw"
+                  className="object-cover transition-transform duration-500 ease-out group-hover:scale-110"
+                />
+              ) : (
+                <PlaceholderImage label={item.label} showLabel={false} className="absolute inset-0" />
+              )}
 
-            <div
-              aria-hidden
-              className="absolute inset-x-0 bottom-0 h-2/3 bg-linear-to-t from-forest-950/85 via-forest-950/15 to-transparent"
-            />
-            <div className="absolute inset-x-0 bottom-0 p-3.5">
-              <p className="text-[0.65rem] font-semibold tracking-[0.15em] text-gold-300 uppercase">
-                {item.category}
-              </p>
-              <p className="text-sm font-medium text-cream-50">{item.label}</p>
-            </div>
-          </div>
-        ))}
+              <div
+                aria-hidden
+                className="absolute inset-x-0 bottom-0 h-2/3 bg-linear-to-t from-forest-950/85 via-forest-950/15 to-transparent"
+              />
+              <div className="absolute inset-x-0 bottom-0 p-3.5">
+                <p className="text-[0.65rem] font-semibold tracking-[0.15em] text-gold-300 uppercase">
+                  {item.category}
+                </p>
+                <p className="text-sm font-medium text-cream-50">{item.label}</p>
+              </div>
+            </motion.div>
+          ))}
+        </AnimatePresence>
       </div>
     </div>
   );

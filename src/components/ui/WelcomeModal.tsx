@@ -100,6 +100,9 @@ function WelcomeModal() {
               >
                 {siteConfig.name}
               </h2>
+              <p className="mt-0.5 text-xs font-medium tracking-[0.15em] text-gold-600 uppercase">
+                {siteConfig.tagline}
+              </p>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                 Three homes, each in a different corner of the Kalimpong hills — chosen
                 for the view, and run by people who live there. No crowds, no itinerary
