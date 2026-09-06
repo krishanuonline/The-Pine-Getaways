@@ -1,5 +1,4 @@
-import { Compass } from "lucide-react";
-import { PlaceholderImage } from "@/components/ui/PlaceholderImage";
+import Image from "next/image";
 import { Badge } from "@/components/ui/Badge";
 import { Reveal } from "@/components/ui/Reveal";
 import type { Destination } from "@/types";
@@ -7,12 +6,15 @@ import type { Destination } from "@/types";
 function DestinationCard({ destination, delay = 0 }: { destination: Destination; delay?: number }) {
   return (
     <Reveal delay={delay} className="group relative h-full overflow-hidden rounded-lg">
-      <PlaceholderImage
-        label={destination.imageLabel}
-        icon={Compass}
-        showLabel={false}
-        className="aspect-3/4 w-full transition-transform duration-500 group-hover:scale-105"
-      />
+      <div className="relative aspect-3/4 w-full overflow-hidden">
+        <Image
+          src={destination.image}
+          alt={destination.imageLabel}
+          fill
+          sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+          className="object-cover transition-transform duration-500 group-hover:scale-105"
+        />
+      </div>
       <div
         aria-hidden
         className="absolute inset-0 bg-linear-to-t from-forest-950 via-forest-950/50 to-transparent"

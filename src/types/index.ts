@@ -16,6 +16,7 @@ export interface Destination {
   name: string;
   description: string;
   points: string[];
+  image: string;
   imageLabel: string;
 }
 
