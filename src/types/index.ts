@@ -54,7 +54,7 @@ export interface Testimonial {
   quote: string;
 }
 
-export type GalleryCategory = "Property" | "Rooms" | "Views" | "Food" | "Experiences";
+export type GalleryCategory = "Rooms" | "Views" | "Food" | "Experiences";
 
 export interface GalleryItem {
   category: GalleryCategory;

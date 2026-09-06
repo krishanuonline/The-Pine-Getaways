@@ -10,7 +10,7 @@ function Gallery() {
         align="center"
         eyebrow="Gallery"
         title="A Closer Look"
-        description="Property, rooms, views, food and the everyday moments in between."
+        description="Rooms, views, food and the everyday moments in between."
       />
 
       <div className="mt-12">

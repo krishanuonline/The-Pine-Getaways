@@ -8,7 +8,6 @@ import type { GalleryCategory, GalleryItem } from "@/types";
 
 const categories: (GalleryCategory | "All")[] = [
   "All",
-  "Property",
   "Rooms",
   "Views",
   "Food",
