@@ -18,9 +18,7 @@ function Logo({ className, variant = "dark" }: LogoProps) {
       className={cn("flex items-center gap-2.5", className)}
       aria-label={siteConfig.name}
     >
-      <LogoMark
-        className={cn("h-9 w-9 shrink-0", isLight ? "text-cream-50" : "text-forest-800")}
-      />
+      <LogoMark className="h-9 w-9 shrink-0" />
       <span
         className={cn(
           "font-serif text-lg leading-tight font-semibold tracking-tight",

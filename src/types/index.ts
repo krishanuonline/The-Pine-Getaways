@@ -59,6 +59,6 @@ export type GalleryCategory = "Property" | "Rooms" | "Views" | "Food" | "Experie
 export interface GalleryItem {
   category: GalleryCategory;
   label: string;
-  /** Relative visual weight used to vary the masonry grid rhythm. */
-  size: "sm" | "md" | "lg";
+  /** Path under /public — falls back to a decorative placeholder when omitted. */
+  image?: string;
 }

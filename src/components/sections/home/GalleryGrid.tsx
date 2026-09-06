@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { PlaceholderImage } from "@/components/ui/PlaceholderImage";
 import type { GalleryCategory, GalleryItem } from "@/types";
@@ -13,12 +14,6 @@ const categories: (GalleryCategory | "All")[] = [
   "Food",
   "Experiences",
 ];
-
-const sizeClasses: Record<GalleryItem["size"], string> = {
-  sm: "h-48",
-  md: "h-64",
-  lg: "h-80",
-};
 
 function GalleryGrid({ items }: { items: GalleryItem[] }) {
   const [active, setActive] = React.useState<(typeof categories)[number]>("All");
@@ -45,13 +40,35 @@ function GalleryGrid({ items }: { items: GalleryItem[] }) {
         ))}
       </div>
 
-      <div className="mt-8 columns-1 gap-4 sm:columns-2 lg:columns-3">
+      <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-4">
         {filtered.map((item) => (
-          <PlaceholderImage
+          <div
             key={item.label}
-            label={item.label}
-            className={cn("mb-4 w-full break-inside-avoid rounded-lg", sizeClasses[item.size])}
-          />
+            className="group relative aspect-square overflow-hidden rounded-xl shadow-sm"
+          >
+            {item.image ? (
+              <Image
+                src={item.image}
+                alt={item.label}
+                fill
+                sizes="(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw"
+                className="object-cover transition-transform duration-500 ease-out group-hover:scale-110"
+              />
+            ) : (
+              <PlaceholderImage label={item.label} showLabel={false} className="absolute inset-0" />
+            )}
+
+            <div
+              aria-hidden
+              className="absolute inset-x-0 bottom-0 h-2/3 bg-linear-to-t from-forest-950/85 via-forest-950/15 to-transparent"
+            />
+            <div className="absolute inset-x-0 bottom-0 p-3.5">
+              <p className="text-[0.65rem] font-semibold tracking-[0.15em] text-gold-300 uppercase">
+                {item.category}
+              </p>
+              <p className="text-sm font-medium text-cream-50">{item.label}</p>
+            </div>
+          </div>
         ))}
       </div>
     </div>
