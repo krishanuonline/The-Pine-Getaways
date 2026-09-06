@@ -13,8 +13,9 @@ export const siteConfig = {
     "Peaceful mountain homestays in Kalimpong, North Bengal — the perfect base for exploring Darjeeling, Sikkim and the Silk Route.",
   url: "https://thepinegetaways.com",
 
-  // TODO: replace with the real brochure PDF URL once available.
-  brochureUrl: "#",
+  // Google Drive's direct-download form — a "/view" URL would open Drive's
+  // preview page instead of downloading, ignoring the buttons' `download` attribute.
+  brochureUrl: "https://drive.google.com/uc?export=download&id=1picCNLvPaltcCL3uxd0aerwySnQpyofT",
 
   navLinks: [
     { label: "Home", href: "/#home", sectionId: "home" },

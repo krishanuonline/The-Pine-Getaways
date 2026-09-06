@@ -14,7 +14,7 @@ import { SwayingTrees } from "@/components/ui/decor/SwayingTrees";
 import { Fireflies } from "@/components/ui/decor/Fireflies";
 import { MountainDivider } from "@/components/ui/decor/MountainDivider";
 
-const infoStrip = ["Damsang Valley", "Nature", "Mountains", "Darjeeling", "Sikkim"];
+const infoStrip = ["Damsang Valley", "Mairung", "Pradhan Gaon"];
 
 function Hero() {
   const heroRef = React.useRef<HTMLElement>(null);

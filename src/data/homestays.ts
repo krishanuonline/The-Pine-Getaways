@@ -2,8 +2,8 @@ import type { Homestay } from "@/types";
 
 export const homestays: Homestay[] = [
   {
-    slug: "mairung",
-    name: "Mairung",
+    slug: "sakar",
+    name: "Sakar Homestay",
     location: "Mairung, Kalimpong",
     tagline: "Cloud views from a quiet mountain village",
     highlights: [
@@ -18,8 +18,8 @@ export const homestays: Homestay[] = [
     originalPriceInr: 1500,
   },
   {
-    slug: "damsang-valley",
-    name: "Damsang Valley",
+    slug: "vivanta",
+    name: "Vivanta Homestay",
     location: "Damsang Valley, Kalimpong",
     tagline: "Valley-facing rooms, open lawns, wide mountain skies",
     highlights: [
@@ -34,8 +34,8 @@ export const homestays: Homestay[] = [
     originalPriceInr: 1500,
   },
   {
-    slug: "pradhan-gaon",
-    name: "Pradhan Gaon",
+    slug: "green-leaf",
+    name: "Green Leaf Homestay",
     location: "Pradhan Gaon, Kalimpong",
     tagline: "A cozy village stay inside a pine forest",
     highlights: [
