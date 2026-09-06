@@ -1,6 +1,6 @@
-import { MapPin, Check, Home } from "lucide-react";
+import Image from "next/image";
+import { MapPin, Check } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/Card";
-import { PlaceholderImage } from "@/components/ui/PlaceholderImage";
 import { PriceTag } from "@/components/ui/PriceTag";
 import { Reveal } from "@/components/ui/Reveal";
 import { BookRequestButton } from "@/components/sections/home/BookRequestButton";
@@ -10,7 +10,15 @@ function HomestayCard({ homestay, delay = 0 }: { homestay: Homestay; delay?: num
   return (
     <Reveal delay={delay} className="h-full">
       <Card className="flex h-full flex-col overflow-hidden">
-        <PlaceholderImage label={homestay.imageLabel} icon={Home} className="aspect-4/3 w-full" />
+        <div className="relative aspect-3/4 w-full">
+          <Image
+            src={homestay.image}
+            alt={homestay.imageLabel}
+            fill
+            sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+            className="object-cover"
+          />
+        </div>
 
         <CardContent className="flex flex-1 flex-col p-6">
           <div className="flex items-center gap-1.5 text-xs font-medium text-muted-foreground">

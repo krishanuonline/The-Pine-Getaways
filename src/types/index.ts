@@ -6,6 +6,7 @@ export interface Homestay {
   location: string;
   tagline: string;
   highlights: string[];
+  image: string;
   imageLabel: string;
   priceInr: number;
   originalPriceInr: number;
