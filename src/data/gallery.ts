@@ -20,7 +20,7 @@ export const galleryItems: GalleryItem[] = [
   { category: "Views", label: "Cloud sea, Pradhan Gaon" },
   {
     category: "Rooms",
-    label: "Vibrant single room",
+    label: "Vibrant room",
     image: "/images/gallery/rooms-vibrant-single.jpg",
   },
   { category: "Food", label: "Fresh mountain breakfast" },
