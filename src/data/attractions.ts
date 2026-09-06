@@ -15,7 +15,7 @@ export const attractionClusters: AttractionCluster[] = [
     ],
   },
   {
-    title: "Pedong & Silk Route",
+    title: "Pedong and Silk Route",
     places: [
       "Damsang Fort",
       "Sangchen Dorjee Monastery",
@@ -26,7 +26,7 @@ export const attractionClusters: AttractionCluster[] = [
     ],
   },
   {
-    title: "Lava & Neora Valley",
+    title: "Lava and Neora Valley",
     places: [
       "Lava Monastery",
       "Neora Valley National Park",
@@ -44,7 +44,7 @@ export const attractionClusters: AttractionCluster[] = [
     places: ["Teesta Valley", "Samthar", "Tinchuley", "Kaffergaon"],
   },
   {
-    title: "Zuluk & Old Silk Route",
+    title: "Zuluk and Old Silk Route",
     places: ["Rongli", "Zuluk", "Nathang Valley", "Silent Valley"],
   },
 ];

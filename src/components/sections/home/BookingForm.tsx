@@ -29,9 +29,10 @@ function BookingForm({ defaultHomestay = "", onSubmitted }: BookingFormProps) {
       "",
       `Name: ${data.get("name")}`,
       `Phone / WhatsApp: ${data.get("phone")}`,
-      `Check-in: ${data.get("checkIn") || "—"}`,
-      `Check-out: ${data.get("checkOut") || "—"}`,
+      `Check-in: ${data.get("checkIn")}`,
+      `Check-out: ${data.get("checkOut")}`,
       `Guests: ${data.get("guests") || "—"}`,
+      `Rooms: ${data.get("rooms")}`,
       `Preferred homestay: ${data.get("homestay") || "No preference"}`,
     ];
     const message = data.get("message");
@@ -53,11 +54,11 @@ function BookingForm({ defaultHomestay = "", onSubmitted }: BookingFormProps) {
       </div>
 
       <div className="grid gap-5 sm:grid-cols-2">
-        <FormField label="Check-in" htmlFor={`${uid}-checkIn`}>
-          <Input id={`${uid}-checkIn`} name="checkIn" type="date" />
+        <FormField label="Check-in" htmlFor={`${uid}-checkIn`} required>
+          <Input id={`${uid}-checkIn`} name="checkIn" type="date" required />
         </FormField>
-        <FormField label="Check-out" htmlFor={`${uid}-checkOut`}>
-          <Input id={`${uid}-checkOut`} name="checkOut" type="date" />
+        <FormField label="Check-out" htmlFor={`${uid}-checkOut`} required>
+          <Input id={`${uid}-checkOut`} name="checkOut" type="date" required />
         </FormField>
       </div>
 
@@ -65,17 +66,21 @@ function BookingForm({ defaultHomestay = "", onSubmitted }: BookingFormProps) {
         <FormField label="Guests" htmlFor={`${uid}-guests`}>
           <Input id={`${uid}-guests`} name="guests" type="number" min={1} placeholder="2" />
         </FormField>
-        <FormField label="Preferred homestay" htmlFor={`${uid}-homestay`}>
-          <Select id={`${uid}-homestay`} name="homestay" defaultValue={defaultHomestay}>
-            <option value="">No preference</option>
-            {homestays.map((homestay) => (
-              <option key={homestay.slug} value={homestay.name}>
-                {homestay.name}
-              </option>
-            ))}
-          </Select>
+        <FormField label="No. of Rooms" htmlFor={`${uid}-rooms`} required>
+          <Input id={`${uid}-rooms`} name="rooms" type="number" min={1} required placeholder="1" />
         </FormField>
       </div>
+
+      <FormField label="Preferred homestay" htmlFor={`${uid}-homestay`}>
+        <Select id={`${uid}-homestay`} name="homestay" defaultValue={defaultHomestay}>
+          <option value="">No preference</option>
+          {homestays.map((homestay) => (
+            <option key={homestay.slug} value={homestay.name}>
+              {homestay.name}
+            </option>
+          ))}
+        </Select>
+      </FormField>
 
       <FormField label="Message" htmlFor={`${uid}-message`}>
         <Textarea id={`${uid}-message`} name="message" placeholder="Anything else we should know?" />

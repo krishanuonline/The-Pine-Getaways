@@ -31,6 +31,9 @@ export const siteConfig = {
     whatsappNumber: "919433898908",
     instagramHandle: "@the_pine_getaways",
     instagramUrl: "https://instagram.com/the_pine_getaways",
+    facebookLabel: "The Pine Getaways",
+    facebookUrl:
+      "https://www.facebook.com/profile.php?id=61591563729560&mibextid=wwXIfr&rdid=d0ErAurt4d5xbT5R&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F18JiGqzRBD%2F%3Fmibextid%3DwwXIfr#",
     location: "Kalimpong District, North Bengal",
   },
 } as const;

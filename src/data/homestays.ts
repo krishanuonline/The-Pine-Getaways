@@ -40,8 +40,8 @@ export const homestays: Homestay[] = [
     tagline: "A cozy village stay inside a pine forest",
     highlights: [
       "Cozy village experience",
-      "Surrounded by pine forests",
-      "Close to Changey Falls",
+      "Surrounded by lush forests",
+      "Close to Duka Falls",
       "Perfect for relaxing weekends",
     ],
     image: "/images/homestays/pradhan-gaon.jpg",

@@ -2,6 +2,7 @@ import Link from "next/link";
 import { MapPin, Phone } from "lucide-react";
 import { Logo } from "@/components/layout/Logo";
 import { InstagramIcon } from "@/components/ui/icons/InstagramIcon";
+import { FacebookIcon } from "@/components/ui/icons/FacebookIcon";
 import { Container } from "@/components/ui/Container";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 import { siteConfig } from "@/config/site";
@@ -77,6 +78,17 @@ function Footer() {
               >
                 <InstagramIcon className="h-3.5 w-3.5 text-gold-400" />
                 {siteConfig.contact.instagramHandle}
+              </a>
+            </li>
+            <li>
+              <a
+                href={siteConfig.contact.facebookUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-sm text-cream-100/70 transition-colors hover:text-cream-50"
+              >
+                <FacebookIcon className="h-3.5 w-3.5 text-gold-400" />
+                {siteConfig.contact.facebookLabel}
               </a>
             </li>
             <li className="flex items-center gap-2 text-sm text-cream-100/70">

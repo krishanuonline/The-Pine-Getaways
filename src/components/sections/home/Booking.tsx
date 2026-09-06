@@ -6,6 +6,7 @@ import { Reveal } from "@/components/ui/Reveal";
 import { BookingForm } from "@/components/sections/home/BookingForm";
 import { siteConfig } from "@/config/site";
 import { InstagramIcon } from "@/components/ui/icons/InstagramIcon";
+import { FacebookIcon } from "@/components/ui/icons/FacebookIcon";
 
 function Booking() {
   return (
@@ -55,6 +56,15 @@ function Booking() {
               >
                 <InstagramIcon className="h-4 w-4 text-gold-400" />
                 {siteConfig.contact.instagramHandle}
+              </a>
+              <a
+                href={siteConfig.contact.facebookUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2.5 text-sm text-cream-100/85 transition-colors hover:text-cream-50"
+              >
+                <FacebookIcon className="h-4 w-4 text-gold-400" />
+                {siteConfig.contact.facebookLabel}
               </a>
               <div className="flex items-center gap-2.5 text-sm text-cream-100/85">
                 <MapPin className="h-4 w-4 text-gold-400" />
