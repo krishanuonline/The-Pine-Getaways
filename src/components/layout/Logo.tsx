@@ -30,7 +30,7 @@ function Logo({ className, variant = "dark" }: LogoProps) {
         </span>
         <span
           className={cn(
-            "hidden text-[0.6rem] font-medium tracking-[0.15em] uppercase sm:block",
+            "text-[0.6rem] font-medium tracking-[0.15em] uppercase",
             isLight ? "text-cream-50/70" : "text-foreground/50"
           )}
         >
