@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { Download } from "lucide-react";
 import { Logo } from "@/components/layout/Logo";
 import { NavLink } from "@/components/layout/NavLink";
 import { MobileNav } from "@/components/layout/MobileNav";
@@ -38,7 +39,23 @@ function Header() {
           ))}
         </nav>
 
-        <div className="hidden md:block">
+        <div className="hidden items-center gap-2 md:flex">
+          <Button
+            variant="ghost"
+            size="sm"
+            asChild
+            className={cn(
+              "gap-1.5 border",
+              scrolled
+                ? "border-forest-800/25 text-forest-800 hover:bg-forest-800/10"
+                : "border-cream-50/40 text-cream-50 hover:bg-cream-50/10"
+            )}
+          >
+            <a href={siteConfig.brochureUrl} download target="_blank" rel="noopener noreferrer">
+              <Download className="h-4 w-4" />
+              Brochure
+            </a>
+          </Button>
           <Button size="sm" asChild>
             <Link href="/#contact">Book Your Stay</Link>
           </Button>

@@ -1,9 +1,10 @@
 "use client";
 
 import * as React from "react";
-import { Menu, X } from "lucide-react";
+import { Download, Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { NavLink } from "@/components/layout/NavLink";
+import { Button } from "@/components/ui/Button";
 import { siteConfig } from "@/config/site";
 
 interface MobileNavProps {
@@ -52,6 +53,18 @@ function MobileNav({ variant = "dark", activeId }: MobileNavProps) {
                 onClick={() => setOpen(false)}
               />
             ))}
+            <Button variant="outline" size="sm" asChild className="mt-2 gap-1.5">
+              <a
+                href={siteConfig.brochureUrl}
+                download
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setOpen(false)}
+              >
+                <Download className="h-4 w-4" />
+                Download Brochure
+              </a>
+            </Button>
           </nav>
         </div>
       )}

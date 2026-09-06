@@ -13,6 +13,9 @@ export const siteConfig = {
     "Peaceful mountain homestays in Kalimpong, North Bengal — the perfect base for exploring Darjeeling, Sikkim and the Silk Route.",
   url: "https://thepinegetaways.com",
 
+  // TODO: replace with the real brochure PDF URL once available.
+  brochureUrl: "#",
+
   navLinks: [
     { label: "Home", href: "/#home", sectionId: "home" },
     { label: "Homestays", href: "/#homestays", sectionId: "homestays" },
