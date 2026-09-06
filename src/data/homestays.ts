@@ -28,7 +28,7 @@ export const homestays: Homestay[] = [
       "Beautiful sunrise & sunset",
       "Quiet surroundings, nature at your doorstep",
     ],
-    image: "/images/homestays/damsang-valley.jpg",
+    image: "/images/homestays/damsang-valley.png",
     imageLabel: "Damsang Valley homestay exterior",
     priceInr: 1350,
     originalPriceInr: 1500,
