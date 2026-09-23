@@ -15,7 +15,7 @@ export const siteConfig = {
 
   // Google Drive's direct-download form — a "/view" URL would open Drive's
   // preview page instead of downloading, ignoring the buttons' `download` attribute.
-  brochureUrl: "https://drive.google.com/uc?export=download&id=1picCNLvPaltcCL3uxd0aerwySnQpyofT",
+  brochureUrl: "https://drive.google.com/file/d/1QttOkehL1ogPQIDd0zdEP1S_efpYplQ3/view?usp=sharing",
 
   navLinks: [
     { label: "Home", href: "/#home", sectionId: "home" },
