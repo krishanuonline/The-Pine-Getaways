@@ -27,7 +27,7 @@ export const siteConfig = {
   ] satisfies NavLink[],
 
   contact: {
-    phones: ["+91 94338 90908", "+91 98307 50247", "+91 87773 29304", "+91 80172 84362"],
+    phones: ["+91 94338 98908", "+91 98307 50247", "+91 87773 29304", "+91 80172 84362"],
     whatsappNumber: "919433898908",
     instagramHandle: "@the_pine_getaways",
     instagramUrl: "https://instagram.com/the_pine_getaways",
